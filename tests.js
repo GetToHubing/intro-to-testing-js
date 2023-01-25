@@ -13,3 +13,21 @@ describe('helloWorld', function() {
       expect(helloWorld()).not.toBe(undefined);
     });
 });
+
+describe('sayHello', function() {
+  it('should be a function', function () {
+    expect(typeof sayHello).toBe('function');
+  });
+  it('should return a string', function() {
+    expect(typeof sayHello()).toBe("string");
+  });
+  it('should return "Hello, Jane!" when executed', function () {
+    expect(sayHello()).toBe("Hello, Jane!");
+  });
+  it('should return "Hello, Alex!', function () {
+    expect(sayHello("Alex")).toBe("Hello, Alex!");
+  });
+  it('should return "Hello, Pat!" when executed', function() {
+    expect(sayHello("Pat")).toBe("Hello, Pat!");
+  });
+})
