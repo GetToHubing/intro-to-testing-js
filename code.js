@@ -27,4 +27,20 @@ function isFive(x) {
     }
 }
 
-console.log(isFive(5))
+function isEven(x) {
+    if(typeof x === 'undefined') {
+        return false;
+    } else if(x === 'boolean') {
+        return false;
+    } else if(x === Infinity) {
+        return false;
+    } else if(parseInt(x) % 2 == 0) {
+        return true;
+    } else if(typeof x == 'string') {
+        return false;
+    } else {
+        return false;
+    }
+}
+
+console.log(isEven('banana'))
