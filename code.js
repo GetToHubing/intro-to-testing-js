@@ -18,13 +18,18 @@ function sayHello(x) {
 //console.log(sayHello(true));
 
 function isFive(x) {
-    if(x === 5) {
-        return true;
-    } else if( x === "5") {
+    if(parseInt(x) === 5) {
         return true;
     } else {
         return false;
     }
+    // if(x === 5) {
+    //     return true;
+    // } else if( x === "5") {
+    //     return true;
+    // } else {
+    //     return false;
+    // }
 }
 
 function isEven(x) {
