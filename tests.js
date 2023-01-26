@@ -61,7 +61,7 @@ describe('isEven', function() {
     expect(isEven()).toBe(false);
   });
   it('should return false if input is boolean', function() {
-    expect(isEven('boolean')).toBe(false);
+    expect(typeof isEven()).toBe('boolean');
   });
   it('should return false when input is infinity', function() {
     expect(isEven(Infinity)).toBe(false);
@@ -80,5 +80,53 @@ describe('isEven', function() {
   });
   it('returns true if input is 2', function() {
     expect(isEven(2)).toBe(true);
+  });
+})
+
+describe('isVowel', function() {
+  it('returns false if called without an argument', function() {
+    expect(isVowel()).toBe(false);
+  });
+  it('should return true if input is "a"', function() {
+    expect(isVowel('a')).toBe(true);
+  });
+  it('should return true if input is "A"', function() {
+    expect(isVowel('A')).toBe(true);
+  });
+  it('should return false if input is "a"', function() {
+    expect(isVowel('y')).toBe(false);
+  });
+  it('returns false if input is a boolean', function() {
+    expect(typeof isVowel()).toBe('boolean');
+  });
+  it('returns false if input is a number', function() {
+    expect(isVowel(4)).toBe(false);  //tried expect(typeof isVowel()).toBe('number')
+  });
+  it('returns false if input contains consonants', function() {
+    expect(isVowel("banana")).toBe(false); //not sure how to write this out
+  });
+})
+
+describe('add', function() {
+  it('returns 5 when input is 2 & 3', function() {
+    expect(add(2, 3)).toBe(5);
+  });
+  it('returns -12 when input is -3 & -9', function() {
+    expect(add(-3, -9)).toBe(-12);
+  });
+  it('returns 11 when input is "5" & 6', function() {
+    expect(add("5", 6)).toBe(11);
+  });
+  it('returns 6 when input is "-4" & "10"', function() {
+    expect(add("-4", "10")).toBe(6);
+  });
+  it('returns false if input isn\'t a number', function() {
+    expect(add("banana", "split")).toBeNaN();
+  });
+  it('returns false if input isn\'t a number', function() {
+    expect(add(2, "apples")).toBeNaN();
+  });
+  it('returns false if input isn\'t a number', function() {
+    expect(add()).toBeNaN();
   });
 })
