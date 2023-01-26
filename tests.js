@@ -100,7 +100,7 @@ describe('isVowel', function() {
     expect(typeof isVowel()).toBe('boolean');
   });
   it('returns false if input is a number', function() {
-    expect(isVowel(4)).toBe(false);  //tried expect(typeof isVowel()).toBe('number')
+    expect(isVowel()).toBe(false);
   });
   it('returns false if input contains consonants', function() {
     expect(isVowel("banana")).toBe(false); //not sure how to write this out
@@ -130,3 +130,6 @@ describe('add', function() {
     expect(add()).toBeNaN();
   });
 })
+
+
+

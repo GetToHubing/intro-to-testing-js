@@ -46,26 +46,22 @@ function isEven(x) {
 //console.log(isEven('false'))
 
 function isVowel(x) {
-    if(typeof x === 'undefined') {
+    if(typeof x === 'undefined' || typeof x === 'boolean') {
         return false;
-    } else if(x === 'a') { // /aeiou/i
+    }   
+    // else if(isNaN(x) === false) {
+    //     return false;
+    // } 
+    else if(/[^aeiou]|\d/gi.test(x)) { ///[^aeiou]/.test searches the string for anything that isn't a vowel
+        return false;
+    } else if(/[aeiou]/i.test(x)) { // 
         return true;
-    }else if(x === 'A') {
-        return true;
-    } else if(x === 'y') {
-        return false;
-    } else if(typeof x === 'boolean') {
-        return false;
-    } else if(x === 4) {                        //(typeof x === 'number') {
-        return false;
-    } else if(/[^aeiou]/gi.test(x)) { ///[^aeiou]/.test searches the string for anything that isn't a vowel
-        return false;
     } else {
         return false;
     }
 }
 
-console.log(isVowel('banana'))
+console.log(isVowel(4))
 
 function add(x, y) {
     if(typeof parseInt(x) === 'number' && typeof parseInt(y) === 'number') {
@@ -76,4 +72,4 @@ function add(x, y) {
     }
 }
 
-console.log(add("banana", "split"))
+//console.log(add("banana", "split"))
