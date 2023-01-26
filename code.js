@@ -6,12 +6,14 @@ function helloWorld() {
 function sayHello(x) {
     if(typeof x === 'string') {
         return "Hello, " + x + "!";
-    } else if (x === undefined) {
+    } else if (x === undefined || typeof x === 'boolean') {
         return "Hello, World!";
-    } else if (typeof x === 'boolean') {
-        return "Hello, World!";
-    } else {
-        return "Hello, Jane!";
+    } 
+    // else if (typeof x === 'boolean') {
+    //     return "Hello, World!";
+    // } 
+    else {
+        return;
     }
 }
 
@@ -33,10 +35,10 @@ function isFive(x) {
 }
 
 function isEven(x) {
-    if(/\d/.test(x) && parseInt(x) % 2 == 0){
+    if(/\d/.test(x) && parseInt(x) % 2 == 0){ //if it is a number AND even
         return true;
     } 
-    else {
+    else { // everything else
         return false;
     }
     // if(typeof x === 'undefined') {
@@ -72,8 +74,7 @@ function isVowel(x) {
 
 function add(x, y) {
     if(typeof parseInt(x) === 'number' && typeof parseInt(y) === 'number') {
-        let z = parseInt(x) + parseInt(y);
-        return z;
+        return parseInt(x) + parseInt(y);
     } else {
         return NaN;
     }
